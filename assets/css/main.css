@@ -22,9 +22,10 @@ body {
   padding: 0 10px;
   text-align: center;
 }
-#goal-container {
+.goal-container {
   padding: 20px;
 }
+
 .subtext {
   font-size: 0.8em;
   text-transform: uppercase;
