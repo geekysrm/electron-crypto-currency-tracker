@@ -36,6 +36,12 @@ function createWindow() {
             shell.openExternal("http://coinmarketcap.com/");
           }
         },
+        {
+          label: "Visit Developer's website",
+          click() {
+            shell.openExternal("http://geekysrm.github.io/");
+          }
+        },
         { type: "separator" },
         {
           label: "Exit",
