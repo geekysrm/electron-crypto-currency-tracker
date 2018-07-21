@@ -7,6 +7,13 @@ const ipc = electron.ipcRenderer;
 const notifyBtn = document.getElementById("notifyBtn");
 const price = document.querySelector("h1");
 const targetPrice = document.getElementById("targetPrice");
+let targetPriceVal;
+
+const notification = {
+  title: "BTC Alert",
+  body: "BTC just beat your target price!",
+  icon: path.join(__dirname, "../assets/images/btc.png")
+};
 
 function getBTC() {
   axios
@@ -17,11 +24,17 @@ function getBTC() {
       const cryptos = res.data.BTC.USD;
       price.innerHTML = "$" + cryptos.toLocaleString("en");
       //toLocaleString('en') makes it comma separated string
+      if (targetPrice.innerHTML != "" && targetPriceVal < res.data.BTC.USD) {
+        const myNotification = new Notification(
+          notification.title,
+          notification
+        );
+      }
     });
 }
 getBTC();
 // Refresh BTC price every 30 seconds
-setInterval(getBTC, 30000);
+setInterval(getBTC, 10000);
 
 notifyBtn.addEventListener("click", function(event) {
   const modalPath = path.join("file://", __dirname, "add.html");
