@@ -2,6 +2,10 @@
 
 ### This "native" Windows+Mac OS+ Linux app displays the current crypto-currency price (only BTC for now). It also notifies the user in form of a custom alert/notification when it crosses the value specified by the user.
 
+## Screenshot:
+![alt text](https://geekysrm.github.io/img/project-electron-crypto.png "Screenshot")
+
+
 ## TODO:
 
 - [ ] Add other cryptocurrencies
